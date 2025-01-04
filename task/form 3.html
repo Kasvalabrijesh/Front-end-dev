@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table   align="center" cellpadding="10">
+        <caption><h1>Complaints</h1> <h3>Help Us Improve Our service</h3> <hr></caption>
+        <form action="">
+            <tr>
+                <td rowspan="2"><label for="">Full Name</label></td>
+                <td ><input type="text" placeholder="FirstName" size="30" pattern="[a-zA-Z]{3,7}" required> </td>
+                   <td> <input type="text" placeholder="LastName" size="30" pattern="[a-zA-Z]{3,7}" required></td>
+            </tr>
+            <tr>
+                <td rowspan=""><label for="" >First</label></td>
+                <td><label for="">Last</label></td>
+            </tr>
+            
+            <tr>
+                <td><label >Email</label></td>
+                <td><input type="email" size="40" pattern="[a-Z0-9.]+'@'+[a-z]+'.'+[a-z]{2,3}$ " required></td>
+            </tr>
+            <tr>
+                <td><label >Phone</label></td>
+                <td><input type="tel" size="40" pattern="[6789][0-9]{9}" maxlength="10" required></td>
+            </tr>
+            <tr>
+                <td><label for="">Where did we go wrong?</label></td>
+                <td><textarea name="" id="" cols="20" rows="5" required></textarea></td>
+            </tr>
+            <tr>
+                <td align="center" colspan="2"><input type="submit"></td>
+            </tr>
+            
+        </form>
+        
+    </table>
+</body>
+</html>

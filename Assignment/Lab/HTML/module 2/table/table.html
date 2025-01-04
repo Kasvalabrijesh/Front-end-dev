@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sandwich Catalog</title>
+    <style>
+        table {
+            width: 80%;
+            margin: 30px auto;
+            border-collapse: collapse;
+            border-color: rgb(209, 20, 20);
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        td img {
+            width: 100px;
+            height: 100px;
+        }
+        .in-stock {
+            background-color: #d4edda;
+        }
+        .out-of-stock {
+            background-color: #f8d7da;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Product Image</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Availability</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="in-stock">
+                <td>Classic BLT</td>
+                <td><img src="/table/sandwich1.jpg" alt="Classic BLT"></td>
+                <td>$5.99</td>
+                <td>Classic Bacon, Lettuce, and Tomato sandwich with mayo.</td>
+                <td>In Stock</td>
+            </tr>
+            <tr class="out-of-stock">
+                <td>Chicken Caesar Wrap</td>
+                <td><img src="/table/sandwich2.jpg" alt="Chicken Caesar Wrap"></td>
+                <td>$7.99</td>
+                <td>Grilled chicken with Caesar dressing, lettuce, and parmesan.</td>
+                <td>Out of Stock</td>
+            </tr>
+            <tr class="in-stock">
+                <td>Veggie Delight</td>
+                <td><img src="/table/sandwich3.jpg" alt="Veggie Delight"></td>
+                <td>$6.49</td>
+                <td>Fresh veggies with hummus in a whole wheat wrap.</td>
+                <td>In Stock</td>
+            </tr>
+            <tr class="in-stock">
+                <td>Steak & Cheese</td>
+                <td><img src="/table/sandwich4.jpg" alt="Steak & Cheese"></td>
+                <td>$8.49</td>
+                <td>Tender steak with melted cheese and onions.</td>
+                <td rowspan="2" class="in-stock">In Stock</td>
+            </tr>
+            <tr class="in-stock">
+                <td>Turkey Club</td>
+                <td><img src="/table/sandwich5.jpg" alt="Turkey Club"></td>
+                <td>$7.49</td>
+                <td>Turkey, bacon, lettuce, and tomato on toasted bread.</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

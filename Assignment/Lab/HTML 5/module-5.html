@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Media and Shapes</title>
+</head>
+<body>
+
+    
+    <h2>Audio Example</h2>
+    <audio controls autoplay  width="320" height="240">
+        <source src="song1.mp3" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <h2>Video Example</h2>
+    <video controls autoplay width="320" height="240">
+        <source src="video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+  
+    <h2>Canvas Shape Example</h2>
+    <canvas id="myCanvas" width="200" height="200" style="border:1px solid black;"></canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+      
+        ctx.fillStyle = "blue";
+        ctx.fillRect(50, 50, 100, 100); 
+    </script>
+
+    <h2>SVG Shape Example</h2>
+    <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="50" stroke="green" stroke-width="4" fill="yellow" />
+    </svg>
+
+</body>
+</html>

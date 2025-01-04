@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset >
+   <table align="center" cellpadding="10" >
+    <form action="">
+    
+        <legend>Customer</legend>
+    <tr>
+        <td><label for="">Name*</label></td> 
+        <td><input type="text" pattern="[a-zA-Z]{3,7}" required></td>
+    </tr>
+    <tr>
+        <td><label for="">Email*</label></td>
+        <td><input type="email" pattern="[a-Z0-9.]+'@'+[a-z]+'.'+[a-z]{2,3}$ " required></td>
+    </tr>
+    <tr>
+        <td><label for="">Investment</label></td>
+        <td><input type="number" name="" max="100000" min="10000" required id=""></td>
+    </tr>
+    <tr>
+        <td><label for="">Date Joined*</label></td>
+        <td><input type="date" required></td>
+    </tr>
+    <tr>
+        <td><label for="">Active</label></td>
+        <td><input type="checkbox" required></td>
+    </tr>
+    <tr>
+        <td><input type="submit" value="OK"> <input type="button" value="Cancel"></td>
+    </tr>
+   
+    </form>
+   </table>
+   </fieldset>
+</body>
+</html>
