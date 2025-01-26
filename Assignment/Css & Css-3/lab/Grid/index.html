@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hair Styles </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #71998d;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            margin: 0 1rem;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 2rem;
+        }
+
+        .card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .card-content h3 {
+            margin: 0.5rem 0;
+        }
+
+        .card-content p {
+            color: #555;
+            margin: 0.5rem 0;
+        }
+
+        footer {
+            background-color:#71998d;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Hair Studio</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Styles</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="grid-container">
+            <div class="card">
+                <img src="https://cdn270-genai.picsart.com/f8d624cb-1dde-44f7-86d1-e792dab26bde/430851572041201.jpg" alt="Hair Style 1">
+                <div class="card-content">
+                    <h3>Elegant Waves</h3>
+                    <p>$30</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn61.picsart.com/196155660000202.jpg?to=crop&type=webp&r=1456x1555&q=85" alt="Hair Style 2">
+                <div class="card-content">
+                    <h3>Classic Bob</h3>
+                    <p>$25</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn270-genai.picsart.com/dfea459f-f8ab-40ba-a29d-90131f4e36c6/430980256011201.jpg" alt="Hair Style 3">
+                <div class="card-content">
+                    <h3>Modern Pixie</h3>
+                    <p>$35</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn172.picsart.com/222018803018202.png?to=crop&type=webp&r=1456x1367&q=85" alt="Hair Style 4">
+                <div class="card-content">
+                    <h3>Layered Cut</h3>
+                    <p>$40</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn130.picsart.com/303490597120201.jpg?to=crop&type=webp&r=1456x2058&q=85" alt="Hair Style 5">
+                <div class="card-content">
+                    <h3>Beachy Waves</h3>
+                    <p>$45</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn270-genai.picsart.com/d3f85197-d954-4b0c-86ff-448940644de9/430851641056201.jpg" alt="Hair Style 6">
+                <div class="card-content">
+                    <h3>Sleek Ponytail</h3>
+                    <p>$20</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn140.picsart.com/300184051137201.jpg?to=crop&type=webp&r=1456x2184&q=85" alt="Hair Style 7">
+                <div class="card-content">
+                    <h3>Curly Layers</h3>
+                    <p>$50</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn270-genai.picsart.com/d3f85197-d954-4b0c-86ff-448940644de9/430851641056201.jpg" alt="Hair Style 8">
+                <div class="card-content">
+                    <h3>Voluminous Curls</h3>
+                    <p>$60</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://cdn130.picsart.com/241122105023202.jpg?to=crop&type=webp&r=1456x1941&q=85" alt="Hair Style 9">
+                <div class="card-content">
+                    <h3>Textured Lob</h3>
+                    <p>$55</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Contact us: 123-456-7890</p>
+        <p>Email: info@hairstudio.com</p>
+        <p>Feedback: We value your input!</p>
+    </footer>
+</body>
+</html>

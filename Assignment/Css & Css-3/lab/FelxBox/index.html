@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Webpage Layout</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #7f5757;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    header .logo img {
+      width: 40px;
+      margin-right: 10px;
+    }
+
+    header ul {
+      display: flex;
+      list-style: none;
+    }
+
+    header ul li {
+      margin: 0 10px;
+    }
+
+    header ul li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .content {
+      display: flex;
+      flex: 1;
+    }
+
+    .sidebar {
+      flex: 1;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+
+    .main {
+      flex: 3;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .main .box {
+      flex: 1 1 calc(50% - 20px);
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .main .box img {
+      width: 100%;
+      height: auto;
+    }
+
+    .main .box .content {
+      padding: 15px;
+    }
+
+    footer {
+      background: #7f5757;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    footer .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer .footer-content div {
+      margin: 10px;
+    }
+
+    footer .footer-content .logo img {
+      width: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+      }
+
+      .main .box {
+        flex: 1 1 100%;
+      }
+
+      footer .footer-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <img src="https://cdn270-genai.picsart.com/13de5717-fd25-4952-ae4a-7644ba4d7b2c/439738056031201.jpg" alt="Company Logo">
+        <h1>DEVLOPER SIDES</h1>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </header>
+
+    <div class="content">
+      <aside class="sidebar">
+        <h2>Sidebar</h2>
+        <p>Links or additional content can go here.</p>
+      </aside>
+
+      <main class="main">
+        <div class="box">
+          <img src="https://cdn-template.picsart.com/templates-cdn/968b250b-63f0-4914-96f1-5a317f1fcad1.jpg" alt="Image 1">
+          <div class="content">
+            <h3>WEB devloper</h3>
+            <!-- <p>Description or details for this box.</p> -->
+          </div>
+        </div>
+        <div class="box">
+          <img src="https://cdn270-genai.picsart.com/1568e1a4-009d-4a1b-9b19-bd47249e5389/424234304019201.jpg" alt="Image 2">
+          <div class="content">
+            <h3>APP devloper</h3>
+            <!-- <p>Description or details for this box.</p> -->
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="logo">
+          <img src="https://cdn270-genai.picsart.com/13de5717-fd25-4952-ae4a-7644ba4d7b2c/439738056031201.jpg" alt="Company Logo">
+        </div>
+        <div class="email">
+          <p>Email: info@example.com</p>
+        </div>
+        <div class="contact">
+          <p>Contact: +123 456 7890</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
