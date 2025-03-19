@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- javscript link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        .sr-input {
+            width: 600px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: start;
+        }
+
+        .city-input {
+            width: 600%;
+        }
+
+        .ptag {
+            font-size: 13px;
+        }
+
+        .br {
+            width: 1px;
+            height: 20px;
+            border: 1px solid;
+        }
+
+        .broder {
+            width: 1px;
+            border-right: 2px solid;
+        }
+
+        .div2 {
+            list-style: none;
+        }
+
+        .div2 ul li {
+
+            text-decoration: none;
+        }
+
+        .nav-lcon-ul .nav-lcon {
+            display: inline-block;
+        }
+
+        .nav-lcon-ul {
+            margin: 5% 0 0  40%;
+        }
+
+        .nav-lcon {
+            padding: 10px;
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div class="container">
+
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="/logo1.png" alt="Logo" width="90" height="60" class="d-inline-block align-text-top">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2 sr-input " type="search" placeholder="Search"
+                                    aria-label="Search" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            </form>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#city">
+                                Ahmeda..
+                            </button>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                data-bs-target="#login"> Login </button>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-end">
+                        <li class="nav-item">
+                            <i class="fa-duotone fa-solid fa-bars" data-bs-toggle="offcanvas"
+                                data-bs-target="#offcanvas" aria-controls="staticBackdrop"></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Modal search -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <input type="text" name="" class="search" placeholder="Serach">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body ">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-bs-toggle="tab" href="#Movies">Movies</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#menu1">Menu 1</a>
+                            </li>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane container active" id="Movies">
+                                <div class="row">
+                                    <div class="col">
+                                        <br>
+                                        <h4> KANNADA</h4>
+                                        <p>1990s (UA) NEW 97%</p>
+                                        <p> Apaayavide Eccharike (UA) NEW 96%</p>
+                                        <p> Begur Colony (UA16) 97%</p>
+                                        <p>Bhaava Theera Yaana (UA16) 97%</p>
+                                        <p>Bhagiratha (UA13)91%</p>
+                                        <p>Bhuvanam Gaganam (UA16) 97%</p>
+                                        <p> Choo Mantar (UA) 91%</p>
+                                        <p>Cycle (2025) (UA13) NEW</p>
+                                        <p> FIR 6 to 6 (UA16) NEW 53%</p>
+                                        <p>Forest (UA16) 90%</p>
+                                        <p>Gagana Kusuma (U) 82%</p>
+                                        <p> Monk The Young (A) NEW 98%</p>
+                                        <p>Nagavalli Bangale (UA16) NEW 71%</p>
+                                        <p> Nanagu Love Aagidhe (UA13) 100%</p>
+                                    </div>
+                                    <div class="col">
+                                        <br>
+                                        <p> Navami (UA) 100%</p>
+                                        <p>Rakshasa (UA13) NEW</p>
+                                        <p>Shabhash Baddimagne (UA16) NEW 94%</p>
+                                        <p>Soori Loves Sandhya (A) NEW</p>
+                                        <p> Viramada Nantara (A) NEW 25%</p>
+                                        <p>Yello Jogappa Ninnaramane (UA) 97%</p>
+                                        <h4> ENGLISH</h4>
+                                        <p>A Complete Unknown (A) NEW 88%</p>
+                                        <p>A Real Pain (A) 82%</p>
+                                        <p>Babygirl (A) 61%</p>
+                                        <p>Captain America: Brave New World 70%</p>
+                                        <p> Conclave (UA13) 83%</p>
+                                        <p> Flow (U) NEW93%</p>
+                                        <p>ICC Mens Champions Trophy 2025 (India Vs Australia) (English) (U) NEW</p>
+                                        <p>Inside Out 2 (U) 92%</p>
+                                    </div>
+                                    <div class="col">
+                                        <br>
+                                        <p>Moana 2 (3D) (U)84%</p>
+                                        <p> Mufasa: The Lion King (3D) (U) 84%</p>
+                                        <p>The Brutalist NEW 83%</p>
+                                        <p>IMAX 2D 2D</p>
+                                        <p>Wicked (3D) (UA) 76%</p>
+                                        <h4>HINDI</h4>
+                                        <p>Aadhi Sabdham (UA13) NEW</p>
+                                        <p>Aradhana (1969) (U) 81%</p>
+                                        <p>Baaz (UA13)</p>
+                                        <p>Chhaava 93%</p>
+                                        <p>20 IMAX 2D 4DX</p>
+                                        <p>Crazxy (UA13) NEW81%</p>
+                                        <p>Dhoom 2 (UA) 80%</p>
+                                        <p>Dil To Pagal Hai (U) 94%</p>
+                                        <p>Gangs of Wasseypur (A) 91%</p>
+                                        <p>Mere Husband Ki Biwi (UA13) 70%</p>
+                                    </div>
+                                    <div class="col">
+                                        <br>
+                                        <p>Sanam Teri Kasam (U) 85%</p>
+                                        <p>Superboys of Malegaon (UA) NEW 86%</p>
+                                        <h4>TELUGU</h4>
+                                        <p> Daaku Maharaaj (UA16) 88%</p>
+                                        <p>Jaabilamma Neeku Antha Kopama (UA13) 84%</p>
+                                        <p>Mazaka (UA13) NEW 86%</p>
+                                        <p>Return of the Dragon (UA16) 95%</p>
+                                        <p>Sankranthiki Vasthunam (UA13) 89%</p>
+                                        <p>Seethamma Vakitlo Sirimalle Chettu (U) 77%</p>
+                                        <p>Shabdham (UA13) NEW 81%</p>
+                                        <p> Thandel (UA13)88%</p>
+                                        <h4>TAMIL</h4>
+                                        <p>Aghathiyaa (UA13) NEW 65%</p>
+                                        <p>Dragon (UA16) 93%</p>
+                                        <p>Nilavuku Enmel Ennadi Kobam (UA13) 78%</p>
+                                        <p>Sabdham (UA13) NEW 82%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane container fade" id="menu1">
+                                <div class="row">
+                                    <div class="col">col</div>
+                                    <div class="col">col</div>
+                                    <div class="col">col</div>
+                                    <div class="col">col</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- model serach end -->
+
+        <!-- model city -->
+        <div class="modal fade" id="city" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <input type="text" placeholder="Serach for Your City" class="city-input">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <img src="https://in.bmscdn.com/m6/images/common-modules/regions/mumbai.png" alt="">
+                            </div>
+                            <div class="col">
+                                <img src="https://in.bmscdn.com/m6/images/common-modules/regions/ncr.png" alt="">
+                            </div>
+                            <div class="col">
+                                <img src="https://in.bmscdn.com/m6/images/common-modules/regions/bang-selected.png"
+                                    alt="">
+                            </div>
+                            <div class="col">
+                                <img src="https://in.bmscdn.com/m6/images/common-modules/regions/hyd.png" alt="">
+                            </div>
+                            <div class="col">
+                                <img src="https://in.bmscdn.com/m6/images/common-modules/regions/ahd.png" alt="">
+                            </div>
+                            <div class="col">
+                                <img src="https://in.bmscdn.com/m6/images/common-modules/regions/chd.png" alt="">
+                            </div>
+                            <div class="col">
+                                <img src="https://in.bmscdn.com/m6/images/common-modules/regions/chen.png" alt="">
+                            </div>
+                            <div class="col">
+                                <img src="https://in.bmscdn.com/m6/images/common-modules/regions/pune.png" alt="">
+                            </div>
+                            <div class="col">
+                                <img src="https://in.bmscdn.com/m6/images/common-modules/regions/kolk.png" alt="">
+                            </div>
+                            <div class="col">
+                                <img src="https://in.bmscdn.com/m6/images/common-modules/regions/koch.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- model city end -->
+
+        <!-- modal login -->
+        <div class="modal fade" id="login" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title fs-5" id="staticBackdropLabel">Sign in</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table align="center" cellpadding="10">
+                            <form action="">
+
+                                <legend>Customer</legend>
+                                <tr>
+                                    <td><label for="">Name*</label></td>
+                                    <td><input type="text" pattern="[a-zA-Z]{3,7}" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="">Email*</label></td>
+                                    <td><input type="email" pattern="[a-Z0-9.]+'@'+[a-z]+'.'+[a-z]{2,3}$ " required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="submit" value="Login"> <input type="button" value="Cancel"></td>
+                                </tr>
+
+                            </form>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal login end -->
+
+        <!-- modal offcanvas -->
+        <div class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="offcanvas"
+            aria-labelledby="staticBackdropLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="staticBackdropLabel">Hey!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div>
+                    <div class="login-canva d-flex justify-content-end">
+                        <img src="https://in.bmscdn.com/webin/movies/superstar/rewards_login.png" alt="Logo" width="40"
+                            height="30" class="d-inline-block align-text-top">
+                        Unlock Special Offers & great benifits
+                        <button type="button" widht="60px" class="btn btn-primary " data-bs-toggle="modal"
+                            data-bs-target="#login">
+                            Login </button>
+                    </div>
+                    <br><br>
+                    <div class="list-group">
+                        <button type="button" class="list-group-item list-group-item-action " aria-current="true"><i
+                                class="fa-regular fa-bell"></i> Notifications</button>
+                        <button type="button" class="list-group-item list-group-item-action " aria-current="true"><i
+                                class="fa-solid fa-store"></i> Your Order</button>
+                        <button type="button" class="list-group-item list-group-item-action " aria-current="true"> <i
+                                class="fa-solid fa-display"></i> Stream Library</button>
+                        <button type="button" class="list-group-item list-group-item-action " aria-current="true"> <i
+                                class="fa-regular fa-credit-card"></i> Play Credit card</button>
+                        <button type="button" class="list-group-item list-group-item-action " aria-current="true"><i
+                                class="fa-solid fa-comments"></i> Helps & Support</button>
+                        <button type="button" class="list-group-item list-group-item-action " aria-current="true"><i
+                                class="fa-solid fa-gear"></i> Accounts & Settings</button>
+                        <button type="button" class="list-group-item list-group-item-action " aria-current="true"><i
+                                class="fa-solid fa-gift"></i> Rewards</button>
+                        <button type="button" class="list-group-item list-group-item-action " aria-current="true">
+                            BookAChange</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- modal offcanvas End -->
+        <!-- Tabs-Body -->
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="#movie">Movies</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#Stream">Stream</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#event">Events</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#plays">plays</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#sports">Sports</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#activities">Activities</a>
+            </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div class="tab-pane container active" id="movie">...</div>
+            <div class="tab-pane container fade" id="Stream">...</div>
+            <div class="tab-pane container fade" id="event">...</div>
+            <div class="tab-pane container fade" id="plays">...</div>
+            <div class="tab-pane container fade" id="sports">...</div>
+            <div class="tab-pane container fade" id="activities">...</div>
+        </div>
+        <!-- Tabs-body End -->
+        <br>
+        <!-- slider -->
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1726036566435_playcardnewweb.jpg"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1740650947822_deewaarweb.jpg"
+                        class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1740739582550_maradityagadhvi1240x300group.jpg"
+                        class="d-block w-100" alt="...">
+                </div>
+            </div>
+        </div>
+        <!-- slider End -->
+        <br><br>
+        <h2>Recommended Movie</h2>
+
+        <!-- Movie-card -->
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OS4zLzEwICAyNDMuOUsgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00408691-wqmumfxjtk-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4>chhaava</h4>
+                            <p>Action/Drama/Historical</p>
+                        </div>
+                        <div class="col">
+
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OS4zLzEwICA0NS44SyBWb3Rlcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00430623-rtqnsspgng-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4>Dragon</h4>
+                            <p>Comedy/Drama/Thriller</p>
+                        </div>
+                        <div class="col">
+
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC42LzEwICA1LjNLIFZvdGVz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00413068-lrgwvfgebr-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4>Rakshasa</h4>
+                            <p>Horror/Thriller</p>
+                        </div>
+                        <div class="col">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC4xLzEwICAyLjZLIFZvdGVz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00432204-euccgryvlj-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4>Mickey 17</h4>
+                            <p>Adventure/Comedy/Fantasy</p>
+                        </div>
+                        <div class="col">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC4yLzEwICAxLjFLIFZvdGVz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00431691-nrmauhflgm-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4>Kingston</h4>
+                            <p>Action/Adventure/Fantasy</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OS4yLzEwICAyNy42SyBWb3Rlcw%3D%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00431676-jhtnqyuftu-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4>Crazxy</h4>
+                            <p>Drama/Thriller</p>
+                        </div>
+                        <div class="col">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC4xLzEwICAxLjdLIFZvdGVz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00435454-yrenucxxbf-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4>Officer on Duty</h4>
+                            <p>Crime/Drama/Thriller</p>
+                        </div>
+                        <div class="col">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC42LzEwICAxLjNLIFZvdGVz,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00410899-kahkzbdeqb-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4>Soori Loves Sandhya</h4>
+                            <p>Action/Drama/Romantic</p>
+                        </div>
+                        <div class="col">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OS43LzEwICAyNDUgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00433895-lvyypkbunx-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4>Chhaava (Telugu)</h4>
+                            <p>Action/Drama/Historical</p>
+                        </div>
+                        <div class="col">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-image,i-discovery-catalog@@icons@@star-icon-202203010609.png,lx-24,ly-615,w-29,l-end:l-text,ie-OC44LzEwICA0MDcgVm90ZXM%3D,fs-29,co-FFFFFF,ly-612,lx-70,pa-8_0_0_0,l-end/et00434215-vgxqrwwgty-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4>Interval</h4>
+                            <p>Comedy/Drama</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev " type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- Movie-card end -->
+
+        <img src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/stream-leadin-web-collection-202210241242.png"
+            alt="" width="100%" class="mt-5 mb-5">
+
+        <!-- event-->
+        <h2>The Best Of Live Events</h2>
+        <div id="carouselExample1" class="carousel slide mt-4 mb-5">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col"><img
+                                src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:l-text,ie-MTArIEV2ZW50cw%3D%3D,co-FFFFFF,ff-Roboto,fs-64,lx-48,ly-320,tg-b,pa-8_0_0_0,l-end:w-300/bmshp-desktop-amusement-park-collection-202404190106.png"
+                                class="d-block w-100" width="100%" alt="..."></div>
+                        <div class="col"><img
+                                src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:l-text,ie-MzQwKyBFdmVudHM%3D,co-FFFFFF,ff-Roboto,fs-64,lx-48,ly-320,tg-b,pa-8_0_0_0,l-end:w-300/workshop-and-more-web-collection-202211140440.png"
+                                class="d-block w-100" alt="..."></div>
+                        <div class="col"><img
+                                src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:l-text,ie-MTUrIEV2ZW50cw%3D%3D,co-FFFFFF,ff-Roboto,fs-64,lx-48,ly-320,tg-b,pa-8_0_0_0,l-end:w-300/bmshp-desktop-kids-collection-202404190106.png"
+                                class="d-block w-100" alt="..."></div>
+                        <div class="col"><img
+                                src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:l-text,ie-MTQ1KyBFdmVudHM%3D,co-FFFFFF,ff-Roboto,fs-64,lx-48,ly-320,tg-b,pa-8_0_0_0,l-end:w-300/comedy-shows-collection-202211140440.png"
+                                class="d-block w-100" alt="..."></div>
+                        <div class="col"><img
+                                src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:l-text,ie-MTIwKyBFdmVudHM%3D,co-FFFFFF,ff-Roboto,fs-64,lx-48,ly-320,tg-b,pa-8_0_0_0,l-end:w-300/music-shows-collection-202211140440.png"
+                                class="d-block w-100" alt="..."></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col"><img
+                                src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:l-text,ie-MjArIEV2ZW50cw%3D%3D,co-FFFFFF,ff-Roboto,fs-64,lx-48,ly-320,tg-b,pa-8_0_0_0,l-end:w-300/upskill-collection-202211140440.png"
+                                class="d-block w-100" alt="..."></div>
+                        <div class="col"><img
+                                src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:l-text,ie-NyBFdmVudHM%3D,co-FFFFFF,ff-Roboto,fs-64,lx-48,ly-320,tg-b,pa-8_0_0_0,l-end:w-300/food-drinks-collection-202211140440.png"
+                                class="d-block w-100" alt="..."></div>
+                        <div class="col"><img
+                                src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:l-text,ie-MTArIEV2ZW50cw%3D%3D,co-FFFFFF,ff-Roboto,fs-64,lx-48,ly-320,tg-b,pa-8_0_0_0,l-end:w-300/interactive-games-collection-202211140440.png"
+                                class="d-block w-100" alt="..."></div>
+                        <div class="col"><img
+                                src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:l-text,ie-MTk1KyBFdmVudHM%3D,co-FFFFFF,ff-Roboto,fs-64,lx-48,ly-320,tg-b,pa-8_0_0_0,l-end:w-300/arts-crafts-collection-202211140440.png"
+                                class="d-block w-100" alt="..."></div>
+                        <div class="col"><img
+                                src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:l-text,ie-ODUrIEV2ZW50cw%3D%3D,co-FFFFFF,ff-Roboto,fs-64,lx-48,ly-320,tg-b,pa-8_0_0_0,l-end:w-300/theatre-shows-collection-202211140440.png"
+                                class="d-block w-100" alt="..."></div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-start ">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+            </div>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- evnet end -->
+
+        <!-- Premieres -->
+        <div class="Premieres bg-primary-subtle">
+            <img src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120/premiere-banner-web-collection-202208191200.png"
+                alt="Bootstrap" width="100%">
+            <h3>Premieres</h3>
+            <p>Brand new releases every Friday</p>
+            <div id="carouselExamplePremieres" class="carousel slide mt-4 mb-5">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col"><img
+                                    src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC/et00365419-hlfajmgaee-portrait.jpg"
+                                    class="d-block w-100" width="100%" alt="..."></div>
+                            <div class="col"><img
+                                    src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:l-image,i-discovery-catalog@@icons@@bms_premiere_v1.png,t-false,lfo-bottom_left,l-end/et00421913-cfdsekmdqk-portrait.jpg"
+                                    class="d-block w-100" alt="..."></div>
+                            <div class="col"><img
+                                    src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:l-image,i-discovery-catalog@@icons@@bms_premiere_v1.png,t-false,lfo-bottom_left,l-end/et00434643-yxlweshfxy-portrait.jpg"
+                                    class="d-block w-100" alt="..."></div>
+                            <div class="col"><img
+                                    src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC/et00436107-qkfjrpsrrq-portrait.jpg"
+                                    class="d-block w-100" alt="..."></div>
+                            <div class="col"><img
+                                    src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:l-image,i-discovery-catalog@@icons@@bms_premiere_v1.png,t-false,lfo-bottom_left,l-end/et00434539-agenrnbrlt-portrait.jpg"
+                                    class="d-block w-100" alt="..."></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col"><img
+                                    src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:l-image,i-discovery-catalog@@icons@@bms_premiere_v1.png,t-false,lfo-bottom_left,l-end/et00421913-cfdsekmdqk-portrait.jpg"
+                                    class="d-block w-100" alt="..."></div>
+                            <div class="col"><img
+                                    src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:l-image,i-discovery-catalog@@icons@@bms_premiere_v1.png,t-false,lfo-bottom_left,l-end/et00434643-yxlweshfxy-portrait.jpg"
+                                    class="d-block w-100" alt="..."></div>
+                            <div class="col"><img
+                                    src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC/et00436107-qkfjrpsrrq-portrait.jpg"
+                                    class="d-block w-100" alt="..."></div>
+                            <div class="col"><img
+                                    src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:l-image,i-discovery-catalog@@icons@@bms_premiere_v1.png,t-false,lfo-bottom_left,l-end/et00434539-agenrnbrlt-portrait.jpg"
+                                    class="d-block w-100" alt="..."></div>
+                            <div class="col"><img
+                                    src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:l-image,i-discovery-catalog@@icons@@bms_premiere_v1.png,t-false,lfo-bottom_left,l-end/et00389714-tcrextunrf-portrait.jpg"
+                                    class="d-block w-100" alt="..."></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-start ">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExamplePremieres"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                </div>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExamplePremieres"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <!-- Premieres end -->
+
+        <!-- game -->
+        <h1>Top Games & Sport Events</h1>
+        <div id="carouselExamplegame" class="carousel slide mt-4">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U3VuLCAzMCBNYXI%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00435305-ktqrgcgtjg-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4>BRAZIL LEGENDS vs INDIA ALL STARS</h4>
+                            <p>Jawaharlal Nehru Stadium: Chennai</p>
+                        </div>
+                        <div class="col">
+
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-VHVlLCAxIEFwcg%3D%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00434748-wfebffswhq-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4>Lucknow Super Giants vs Punjab Kings</h4>
+                            <p>BRSABV Ekana Cricket Stadium: Lucknow</p>
+                        </div>
+                        <div class="col">
+
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-TW9uLCA3IEFwcg%3D%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00434286-prxxtvrcam-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4>Mumbai Indians vs Royal Challengers Bengaluru</h4>
+                            <p>Wankhede Stadium: Mumbai</p>
+                        </div>
+                        <div class="col">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U3VuLCAzMCBNYXI%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00435113-ryvwhypapz-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4> The SIStra Run</h4>
+                            <p>The Bay at Ecoworld: Bengaluru</p>
+                        </div>
+                        <div class="col">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U3VuLCA5IE1hcg%3D%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00434694-gbrvgaxddz-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4>Run to educate girl child</h4>
+                            <p>Run to educate girl child</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <div class="col">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U3VuLCA2IEFwcg%3D%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00423995-qveybvggqq-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4>Bengaluru Freshathon Run (Run for Cancer) Edition 4</h4>
+                            <p>Cubbon Park (Park Side): Bengaluru</p>
+                        </div>
+                        <div class="col">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-TW9uLCAzMSBNYXI%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00434285-zfjkndeeya-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4> Mumbai Indians vs Kolkata Knight Riders</h4>
+                            <p>Wankhede Stadium: Mumbai</p>
+                        </div>
+                        <div class="col">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-VGh1LCAxNSBNYXk%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00434291-rxfqkgdcly-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4>Mumbai Indians vs Delhi Capitals</h4>
+                            <p>Wankhede Stadium: Mumbai</p>
+                        </div>
+                        <div class="col">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-VHVlLCA2IE1heQ%3D%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00434290-rhqjhpehqb-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4>Mumbai Indians vs Gujarat Titans</h4>
+                            <p>Wankhede Stadium: Mumbai</p>
+                        </div>
+                        <div class="col">
+                            <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:l-text,ie-U3VuLCAyNSBNYXk%3D,fs-29,co-FFFFFF,ly-612,lx-24,pa-8_0_0_0,l-end/et00434382-fwmeegsznz-portrait.jpg"
+                                alt="Bootstrap" width="100%">
+                            <h4>Bengaluru 10K Run</h4>
+                            <p>Sri Kanteerava Outdoor
+                                Stadium: Bengaluru</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev " type="button" data-bs-target="#carouselExamplegame"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExamplegame"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- game end -->
+        <div class="footer mt-5 bg-dark text-white p-3  ">
+            <div class="f-heder d-flex justify-content-around">
+                <i class="fa-solid fa-house-flag me-3 fs-5"></i>
+                <h4>List your Show</h4>
+                <h6 class="ms-3 fs-6">Got a show, event, activity or a great experience? Partner with us & get listed on
+                    BookMyShow</h6>
+                <div class="h-btn ms-5">
+                    <button type="button" class="btn btn-info">Contact today!</button>
+                </div>
+            </div>
+            <div class="f-sec mt-5  p-3 bg-secondary">
+                <div class="row">
+                    <div class="col"><i class="fa-solid fa-headset">
+                            <p class="ptag mt-3">24/7 CUSTOMER CARE</p>
+                        </i></div>
+                    <div class="col"><i class="fa-solid fa-ticket"></i>
+                        <p class="ptag mt-2">RESEND BOOKING CONFIRMATION</p>
+                    </div>
+                    <div class="col"><i class="fa-solid fa-envelope-open-text"></i>
+                        <p class="ptag mt-2 ">SUBSCRIBE TO THE NEWSLETTER</p>
+                    </div>
+                </div>
+            </div>
+            <div class="f-tr mt-5">
+                <p class="mb-2">MOVIES NOW SHOWING IN BENGALURU</p>
+                <div class="div1 d-flex">
+                    <p class="ptag me-1">Chhaava</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Dragon</p>
+                    <p class="ptag me-1">Rakshasa</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Kingston</p>
+                    <p class="ptag me-1">Mickey 17</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Crazxy</p>
+                    <p class="ptag me-1">Officer on Duty</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Soori Loves Sandhya |</p>
+                    <p class="ptag me-1">Interval</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Chhaava (Telugu)</p>
+                </div>
+                <p class="mb-2">MOVIES NOW SHOWING IN BENGALURU</p>
+                <div class="div1 d-flex">
+                    <p class="ptag me-1">Chhaava</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Dragon</p>
+                    <p class="ptag me-1">Rakshasa</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Kingston</p>
+                    <p class="ptag me-1">Mickey 17</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Crazxy</p>
+                    <p class="ptag me-1">Officer on Duty</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Soori Loves Sandhya |</p>
+                    <p class="ptag me-1">Interval</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Chhaava (Telugu)</p>
+                </div>
+                <p class="mb-2">MOVIES NOW SHOWING IN BENGALURU</p>
+                <div class="div1 d-flex">
+                    <p class="ptag me-1">Chhaava</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Dragon</p>
+                    <p class="ptag me-1">Rakshasa</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Kingston</p>
+                    <p class="ptag me-1">Mickey 17</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Crazxy</p>
+                    <p class="ptag me-1">Officer on Duty</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Soori Loves Sandhya |</p>
+                    <p class="ptag me-1">Interval</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Chhaava (Telugu)</p>
+                </div>
+                <p class="mb-2">MOVIES NOW SHOWING IN BENGALURU</p>
+                <div class="div1 d-flex">
+                    <p class="ptag me-1">Chhaava</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Dragon</p>
+                    <p class="ptag me-1">Rakshasa</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Kingston</p>
+                    <p class="ptag me-1">Mickey 17</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Crazxy</p>
+                    <p class="ptag me-1">Officer on Duty</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Soori Loves Sandhya |</p>
+                    <p class="ptag me-1">Interval</p>
+                    <span class="br"></span>
+                    <p class="ptag ms-1">Chhaava (Telugu)</p>
+                </div>
+
+                <div class="icon">
+                    <ul class="nav-lcon-ul">
+                        <li class="nav-lcon"><i class="fa-brands fa-square-instagram"></i></li>
+                        <li class="nav-lcon"><i class="fa-brands fa-square-facebook"></i></li>
+                        <li class="nav-lcon"><i class="fa-brands fa-square-twitter"></i></li>
+                        <li class="nav-lcon"><i class="fa-brands fa-linkedin"></i></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </nav>
+    </div>
+    <!-- navbar End -->
+
+
+</body>
+
+</html>
