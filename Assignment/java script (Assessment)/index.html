@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        .slider-container {
+            position: relative;
+            width: 60%;
+            margin: auto;
+            overflow: hidden;
+            border: 2px solid #ccc;
+            padding: 10px;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+            opacity: 0.9;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        .thumbnail-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60%;
+            margin: auto;
+            overflow: hidden;
+            border: 2px solid #ccc;
+            padding: 5px;
+            position: relative;
+        }
+        .thumbnail-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .thumbnail {
+            width: 80px;
+            height: 50px;
+            margin: 5px;
+            cursor: pointer;
+            opacity: 1;
+        }
+        .thumbnail:hover {
+            opacity: 0.9;
+        }
+        .thumbnail-prev, .thumbnail-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .thumbnail-prev { left: 5px; }
+        .thumbnail-next { right: 5px; }
+    </style>
+</head>
+<body>
+    <div class="slider-container">
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <div class="slider" id="slider">
+            <div class="slide"><img src="/img/image1.webp" alt="Image 1"></div>
+            <div class="slide"><img src="/img/image2.jpg" alt="Image 2"></div>
+            <div class="slide"><img src="/img/image3.jpg" alt="Image 3"></div>
+            <div class="slide"><img src="img/image4.jpg" alt="Image 4"></div>
+            <div class="slide"><img src="img/image5.jpg" alt="Image 5"></div>
+            <div class="slide"><img src="img/image6.jpg" alt="Image 6"></div>
+            <div class="slide"><img src="img/image7.jpg" alt="Image 7"></div>
+            <div class="slide"><img src="img/image8.webp" alt="Image 8"></div>
+            <div class="slide"><img src="img/image9.jpg" alt="Image 9"></div>
+        </div>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <div class="thumbnail-container">
+        <button class="thumbnail-prev" onclick="moveThumbnail(-1)">&#10094;</button>
+        <div class="thumbnail-slider" id="thumbnail-slider">
+            <img class="thumbnail" src="/img/image1.webp" onclick="jumpToSlide(0)" alt="Thumbnail 1">
+            <img class="thumbnail" src="/img/image2.jpg" onclick="jumpToSlide(1)" alt="Thumbnail 2">
+            <img class="thumbnail" src="img/image3.jpg" onclick="jumpToSlide(2)" alt="Thumbnail 3">
+            <img class="thumbnail" src="img/image4.jpg" onclick="jumpToSlide(3)" alt="Thumbnail 4">
+            <img class="thumbnail" src="img/image5.jpg" onclick="jumpToSlide(4)" alt="Thumbnail 5">
+            <img class="thumbnail" src="img/image6.jpg" onclick="jumpToSlide(5)" alt="Thumbnail 6">
+            <img class="thumbnail" src="img/image7.jpg" onclick="jumpToSlide(6)" alt="Thumbnail 7">
+            <img class="thumbnail" src="img/image8.webp" onclick="jumpToSlide(7)" alt="Thumbnail 8">
+            <img class="thumbnail" src="img/image9.jpg" onclick="jumpToSlide(8)" alt="Thumbnail 9">
+        </div>
+        <button class="thumbnail-next" onclick="moveThumbnail(1)">&#10095;</button>
+    </div>
+
+    <script>
+        let index = 0;
+        function moveSlide(step) {
+            const slides = document.querySelectorAll('.slide');
+            index += step;
+            if (index < 0) index = slides.length - 1;
+            if (index >= slides.length) index = 0;
+            document.getElementById('slider').style.transform = `translateX(${-index * 100}%)`;
+        }
+        function jumpToSlide(slideIndex) {
+            index = slideIndex;
+            document.getElementById('slider').style.transform = `translateX(${-index * 100}%)`;
+        }
+        let thumbIndex = 0;
+        function moveThumbnail(step) {
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            thumbIndex += step;
+            if (thumbIndex < 0) thumbIndex = thumbnails.length - 1;
+            if (thumbIndex >= thumbnails.length) thumbIndex = 0;
+            document.getElementById('thumbnail-slider').style.transform = `translateX(${-thumbIndex * 90}px)`;
+        }
+    </script>
+</body>
+</html>
