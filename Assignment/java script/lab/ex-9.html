@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Button Click Alert</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      text-align: center;
+      background: #f0f4f8;
+    }
+    button {
+      font-size: 1.2rem;
+      padding: 12px 24px;
+      cursor: pointer;
+      border: none;
+      border-radius: 6px;
+      background-color: #007acc;
+      color: white;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="alertButton">Click me</button>
+
+  <script>
+    // Select the button
+    const button = document.getElementById('alertButton');
+
+    // Attach event listener for click
+    button.addEventListener('click', () => {
+      alert('Button clicked!');
+    });
+  </script>
+
+</body>
+</html>

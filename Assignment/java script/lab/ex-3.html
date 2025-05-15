@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JavaScript Operators Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      padding: 20px;
+      color: #222;
+    }
+    h1 {
+      color: #007acc;
+    }
+    .result {
+      background: #e0e7ff;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 8px;
+      font-family: monospace;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript Operators Demo</h1>
+  <div class="result" id="output"></div>
+
+  <script>
+    // Variables
+    let a = 15;
+    let b = 3;
+
+    // Arithmetic Operations
+    let sum = a + b;
+    let diff = a - b;
+    let product = a * b;
+    let quotient = a / b;
+
+    // Comparison Operations
+    let areEqual = (a === b);
+    let isAGreater = (a > b);
+
+    // Logical Operation
+    // Check if a > 10 AND b < 5
+    let logicalCheck = (a > 10 && b < 5);
+
+    // Prepare output string
+    let outputText = 
+      `Arithmetic Operations:\n` +
+      `a + b = ${sum}\n` +
+      `a - b = ${diff}\n` +
+      `a * b = ${product}\n` +
+      `a / b = ${quotient}\n\n` +
+
+      `Comparison Operations:\n` +
+      `Are a and b equal? ${areEqual}\n` +
+      `Is a greater than b? ${isAGreater}\n\n` +
+
+      `Logical Operation:\n` +
+      `Is a > 10 AND b < 5? ${logicalCheck}`;
+
+    // Output to page
+    document.getElementById('output').textContent = outputText;
+
+    // Also log to console
+    console.log(outputText);
+  </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>If-Else and Switch Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f0f4f8;
+      color: #333;
+    }
+    h2 {
+      color: #007acc;
+    }
+    label, input, button {
+      font-size: 1rem;
+      margin: 5px 0;
+    }
+    .output {
+      background: #e1eaff;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 6px;
+      font-family: monospace;
+      white-space: pre-line;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Task 1: Check Number Sign</h2>
+  <label for="numberInput">Enter a number:</label><br/>
+  <input type="number" id="numberInput" />
+  <button onclick="checkNumber()">Check</button>
+  <div id="task1Output" class="output"></div>
+
+  <h2>Task 2: Day of the Week</h2>
+  <label for="dayInput">Enter a number (1-7):</label><br/>
+  <input type="number" id="dayInput" min="1" max="7" />
+  <button onclick="showDay()">Show Day</button>
+  <div id="task2Output" class="output"></div>
+
+  <script>
+    // Task 1: Check if a number is positive, negative, or zero using if-else
+    function checkNumber() {
+      const num = Number(document.getElementById('numberInput').value);
+      let result;
+
+      if (num > 0) {
+        result = "The number is Positive.";
+      } else if (num < 0) {
+        result = "The number is Negative.";
+      } else {
+        result = "The number is Zero.";
+      }
+
+      document.getElementById('task1Output').textContent = result;
+    }
+
+    // Task 2: Show day of the week using switch statement
+    function showDay() {
+      const dayNum = Number(document.getElementById('dayInput').value);
+      let dayName;
+
+      switch(dayNum) {
+        case 1:
+          dayName = "Monday";
+          break;
+        case 2:
+          dayName = "Tuesday";
+          break;
+        case 3:
+          dayName = "Wednesday";
+          break;
+        case 4:
+          dayName = "Thursday";
+          break;
+        case 5:
+          dayName = "Friday";
+          break;
+        case 6:
+          dayName = "Saturday";
+          break;
+        case 7:
+          dayName = "Sunday";
+          break;
+        default:
+          dayName = "Invalid input! Please enter a number between 1 and 7.";
+      }
+
+      document.getElementById('task2Output').textContent = dayName;
+    }
+  </script>
+
+</body>
+</html>

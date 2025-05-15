@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Array Tasks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      padding: 20px;
+      color: #333;
+    }
+    h2 {
+      color: #007acc;
+    }
+    button {
+      margin: 10px 0 15px 0;
+      padding: 8px 15px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .output {
+      background: #e1f0ff;
+      padding: 10px;
+      border-radius: 6px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      max-width: 350px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Task 1: Array Manipulation</h2>
+  <button onclick="manipulateFruits()">Run Task 1</button>
+  <div id="task1Output" class="output"></div>
+
+  <h2>Task 2: Sum of Array Elements</h2>
+  <button onclick="sumArray()">Run Task 2</button>
+  <div id="task2Output" class="output"></div>
+
+  <script>
+    // Task 1: Manipulate fruit array
+    function manipulateFruits() {
+      let fruits = ["apple", "banana", "cherry"];
+      console.log("Original array:", fruits);
+
+      // Add a fruit to the end
+      fruits.push("orange");
+
+      // Remove the first fruit
+      fruits.shift();
+
+      console.log("Modified array:", fruits);
+
+      document.getElementById('task1Output').textContent = 
+        `After adding "orange" and removing first fruit:\n[${fruits.join(", ")}]`;
+    }
+
+    // Task 2: Sum all elements in a number array
+    function sumArray() {
+      const numbers = [5, 10, 15, 20, 25];
+      console.log("Array:", numbers);
+
+      let sum = 0;
+      for (let num of numbers) {
+        sum += num;
+      }
+
+      console.log("Sum:", sum);
+
+      document.getElementById('task2Output').textContent = 
+        `Array elements: [${numbers.join(", ")}]\nSum: ${sum}`;
+    }
+  </script>
+
+</body>
+</html>

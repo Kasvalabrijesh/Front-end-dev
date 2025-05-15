@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Functions Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      padding: 20px;
+      color: #222;
+    }
+    h2 {
+      color: #007acc;
+    }
+    input, button {
+      margin: 5px 0 15px 0;
+      padding: 8px;
+      font-size: 1rem;
+    }
+    .output {
+      background: #d0eaff;
+      padding: 10px;
+      border-radius: 6px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      max-width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Task 1: Greet User</h2>
+  <input type="text" id="userName" placeholder="Enter your name" />
+  <br />
+  <button onclick="handleGreetUser()">Greet</button>
+  <div id="greetOutput" class="output"></div>
+
+  <h2>Task 2: Calculate Sum</h2>
+  <input type="number" id="num1" placeholder="Enter first number" />
+  <br />
+  <input type="number" id="num2" placeholder="Enter second number" />
+  <br />
+  <button onclick="handleCalculateSum()">Calculate Sum</button>
+  <div id="sumOutput" class="output"></div>
+
+  <script>
+    // Task 1: greetUser function
+    function greetUser(name) {
+      return `Hello, ${name}!`;
+    }
+
+    function handleGreetUser() {
+      const name = document.getElementById('userName').value.trim();
+      if (name) {
+        const message = greetUser(name);
+        document.getElementById('greetOutput').textContent = message;
+      } else {
+        document.getElementById('greetOutput').textContent = "Please enter your name.";
+      }
+    }
+
+    // Task 2: calculateSum function
+    function calculateSum(num1, num2) {
+      return num1 + num2;
+    }
+
+    function handleCalculateSum() {
+      const n1 = Number(document.getElementById('num1').value);
+      const n2 = Number(document.getElementById('num2').value);
+
+      if (!isNaN(n1) && !isNaN(n2)) {
+        const sum = calculateSum(n1, n2);
+        document.getElementById('sumOutput').textContent = `Sum: ${sum}`;
+      } else {
+        document.getElementById('sumOutput').textContent = "Please enter valid numbers.";
+      }
+    }
+  </script>
+
+</body>
+</html>

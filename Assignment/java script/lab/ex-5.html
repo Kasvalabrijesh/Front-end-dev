@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Loop Tasks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      padding: 20px;
+      color: #222;
+    }
+    h2 {
+      color: #0066cc;
+    }
+    .output {
+      background: #e6f0ff;
+      padding: 10px;
+      margin-top: 8px;
+      border-radius: 6px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+    input, button {
+      font-size: 1rem;
+      margin: 5px 0 15px 0;
+      padding: 6px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Task 1: For loop from 1 to 10</h2>
+  <button onclick="printNumbers()">Print Numbers</button>
+  <div id="task1Output" class="output"></div>
+
+  <h2>Task 2: Sum all even numbers between 1 and 20 (while loop)</h2>
+  <button onclick="sumEvenNumbers()">Calculate Sum</button>
+  <div id="task2Output" class="output"></div>
+
+  <h2>Task 3: Do-while loop asking for number &gt; 10</h2>
+  <button onclick="askForNumber()">Start Input Loop</button>
+  <div id="task3Output" class="output"></div>
+
+  <script>
+    // Task 1: For loop to print numbers from 1 to 10
+    function printNumbers() {
+      let output = '';
+      for(let i = 1; i <= 10; i++) {
+        output += i + ' ';
+      }
+      document.getElementById('task1Output').textContent = output.trim();
+      console.log("Task 1 output:", output.trim());
+    }
+
+    // Task 2: While loop to sum all even numbers between 1 and 20
+    function sumEvenNumbers() {
+      let sum = 0;
+      let num = 2; // start from first even number
+      while (num <= 20) {
+        sum += num;
+        num += 2;
+      }
+      const output = `Sum of even numbers between 1 and 20 is: ${sum}`;
+      document.getElementById('task2Output').textContent = output;
+      console.log("Task 2 output:", output);
+    }
+
+    // Task 3: Do-while loop asking user input until number > 10
+    function askForNumber() {
+      let input;
+      do {
+        input = prompt("Enter a number greater than 10:");
+        if (input === null) {
+          // User pressed cancel
+          document.getElementById('task3Output').textContent = "Input cancelled by user.";
+          return;
+        }
+        input = Number(input);
+      } while (isNaN(input) || input <= 10);
+
+      const output = `You entered: ${input} which is greater than 10.`;
+      document.getElementById('task3Output').textContent = output;
+      console.log("Task 3 output:", output);
+    }
+  </script>
+
+</body>
+</html>

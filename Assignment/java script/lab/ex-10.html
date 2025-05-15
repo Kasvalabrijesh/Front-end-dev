@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Change Paragraph with JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <p id="myParagraph">Hello, World!</p>
+
+  <script>
+    const paragraph = document.getElementById('myParagraph');
+    // Change text content
+    paragraph.textContent = "JavaScript is fun!";
+    // Change text color
+    paragraph.style.color = "blue";
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Car Object Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f3f7fb;
+      color: #222;
+    }
+    h2 {
+      color: #007acc;
+    }
+    .output {
+      background: #dcefff;
+      padding: 15px;
+      border-radius: 6px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Car Object Manipulation</h2>
+  <button onclick="manipulateCar()">Run Car Object Tasks</button>
+  <div id="output" class="output"></div>
+
+  <script>
+    function manipulateCar() {
+      // Create car object
+      let car = {
+        brand: "Toyota",
+        model: "Corolla",
+        year: 2015
+      };
+
+      // Access and print brand and model
+      let info = `Brand: ${car.brand}\nModel: ${car.model}\n`;
+
+      // Update the year
+      car.year = 2020;
+      info += `Updated Year: ${car.year}\n`;
+
+      // Add new property color
+      car.color = "Blue";
+      info += `Added Color: ${car.color}\n`;
+
+      // Log the final car object
+      console.log("Car object:", car);
+
+      // Show on page
+      document.getElementById('output').textContent = info;
+    }
+  </script>
+
+</body>
+</html>
