@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Multi-User Registration with Admin</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            animation: bgColor 10s infinite alternate;
+        }
+
+        @keyframes bgColor {
+            0% {
+                background-color: #f0f8ff;
+            }
+
+            50% {
+                background-color: #e0f7fa;
+            }
+
+            100% {
+                background-color: #fff3e0;
+            }
+        }
+
+        .nav {
+            display: none;
+            background: #007bff;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .nav button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            border: none;
+            background: white;
+            color: #007bff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .nav button:hover {
+            background: #0056b3;
+            color: white;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 3rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.3rem;
+            color: #555;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.6rem;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus {
+            border-color: #007bff;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.8rem;
+            height: 1rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 0.7rem;
+            background: #007bff;
+            color: white;
+            border: none;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #0056b3;
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            background: #fafafa;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        .link-btn {
+            background: none;
+            border: none;
+            color: #007bff;
+            cursor: pointer;
+            text-decoration: underline;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        td button {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        td button:hover {
+            background-color: #c9302c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <div class="nav" id="navBar">
+        <button onclick="showPage('home')">Home</button>
+        <button onclick="showPage('about')">About</button>
+        <button onclick="showPage('contact')">Contact</button>
+        <button onclick="showPage('adminPanel')">Admin Panel</button>
+        <button onclick="logout()">⬅ Logout</button>
+    </div>
+
+    <!-- Register Page -->
+    <div class="container page active" id="registerPage">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" id="regName" />
+                <span class="error" id="regNameError"></span>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="regEmail" />
+                <span class="error" id="regEmailError"></span>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="regPassword" />
+                <span class="error" id="regPasswordError"></span>
+            </div>
+            <button type="submit" class="submit-btn">Register</button>
+            <button type="button" class="link-btn" onclick="goToLogin()">Already registered? Login</button>
+        </form>
+    </div>
+
+    <!-- Login Page -->
+    <div class="container page" id="loginPage">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="loginEmail" />
+                <span class="error" id="loginEmailError"></span>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="loginPassword" />
+                <span class="error" id="loginPasswordError"></span>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+            <button type="button" class="link-btn" onclick="goToRegister()">Need an account? Register</button>
+        </form>
+    </div>
+
+    <!-- Main Pages -->
+    <div class="container page" id="home">
+        <h2>🏠 Home</h2>
+        <div class="card" id="welcomeMsg">Welcome!</div>
+        <button class="submit-btn" style="background:#d9534f;margin-top:10px;" onclick="deleteAccount()">Delete My
+            Account</button>
+    </div>
+
+    <div class="container page" id="about">
+        <h2>ℹ️ About</h2>
+        <div class="card">This is a multi-step form demo with animations and local storage.</div>
+    </div>
+
+    <div class="container page" id="contact">
+        <h2>📞 Contact</h2>
+        <div class="card">Email: support@example.com</div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div class="container page" id="adminPanel">
+        <h2>🛠️ Admin Panel</h2>
+        <div class="card">
+            <p>Registered Users:</p>
+            <table id="usersTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+
+
+        let currentUserEmail = null;
+
+        function showPage(id) {
+            document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+            document.getElementById(id).classList.add("active");
+            if (id === 'adminPanel') {
+                renderUsersTable();
+            }
+        }
+
+        function goToLogin() {
+            showPage("loginPage");
+        }
+
+        function goToRegister() {
+            showPage("registerPage");
+        }
+
+        function logout() {
+            currentUserEmail = null;
+            document.getElementById("navBar").style.display = "none";
+            showPage("loginPage");
+        }
+
+        // Register handler
+        document.getElementById("registerForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById("regName").value.trim();
+            const email = document.getElementById("regEmail").value.trim();
+            const password = document.getElementById("regPassword").value;
+
+            document.getElementById("regNameError").textContent = "";
+            document.getElementById("regEmailError").textContent = "";
+            document.getElementById("regPasswordError").textContent = "";
+
+            let valid = true;
+
+            if (name === "") {
+                document.getElementById("regNameError").textContent = "Name required";
+                valid = false;
+            }
+
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!emailPattern.test(email)) {
+                document.getElementById("regEmailError").textContent = "Invalid email";
+                valid = false;
+            }
+
+            if (password.length < 6) {
+                document.getElementById("regPasswordError").textContent = "Min 6 characters";
+                valid = false;
+            }
+
+            if (valid) {
+                let users = JSON.parse(localStorage.getItem("users")) || [];
+
+                const userExists = users.some(u => u.email === email);
+                if (userExists) {
+                    document.getElementById("regEmailError").textContent = "Email already registered";
+                    return;
+                }
+
+                users.push({ name, email, password });
+                localStorage.setItem("users", JSON.stringify(users));
+                alert("Registered successfully! Please login.");
+                showPage("loginPage");
+            }
+        });
+
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const email = document.getElementById("loginEmail").value.trim();
+            const password = document.getElementById("loginPassword").value;
+
+            document.getElementById("loginEmailError").textContent = "";
+            document.getElementById("loginPasswordError").textContent = "";
+
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+
+            const user = users.find(u => u.email === email && u.password === password);
+
+            if (!user) {
+                document.getElementById("loginPasswordError").textContent = "Invalid email or password";
+                return;
+            }
+
+            currentUserEmail = user.email;
+
+            document.getElementById("navBar").style.display = "block";
+            showPage("home");
+            updateWelcomeMessage();
+        });
+
+        function updateWelcomeMessage() {
+            if (!currentUserEmail) return;
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+            const user = users.find(u => u.email === currentUserEmail);
+            if (user) {
+                document.getElementById("welcomeMsg").textContent = `Welcome, ${user.name}!`;
+            }
+        }
+
+        function deleteAccount() {
+            if (!currentUserEmail) return;
+
+            if (!confirm("Are you sure you want to delete your account? This action cannot be undone.")) return;
+
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+            users = users.filter(u => u.email !== currentUserEmail);
+            localStorage.setItem("users", JSON.stringify(users));
+            alert("Account deleted.");
+
+            // logout and go to register page
+            logout();
+            showPage("registerPage");
+        }
+
+        function renderUsersTable() {
+            const tbody = document.querySelector("#usersTable tbody");
+            tbody.innerHTML = "";
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+            if (users.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="3">No registered users.</td></tr>`;
+                return;
+            }
+            users.forEach(user => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+          <td>${user.name}</td>
+          <td>${user.email}</td>
+          <td><button onclick="deleteUser('${user.email}')">Delete</button></td>
+        `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function deleteUser(email) {
+            if (!confirm(`Delete user ${email}?`)) return;
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+            users = users.filter(u => u.email !== email);
+            localStorage.setItem("users", JSON.stringify(users));
+
+            if (email === currentUserEmail) {
+                alert("Your account was deleted by admin.");
+                logout();
+                showPage("loginPage");
+            } else {
+                renderUsersTable();
+            }
+        }
+
+        window.onload = () => {
+            document.getElementById("navBar").style.display = "none";
+            showPage("registerPage");
+        };
+    </script>
+</body>
+
+</html>
