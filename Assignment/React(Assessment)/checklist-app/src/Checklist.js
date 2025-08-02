@@ -8,7 +8,7 @@ const Checklist = () => {
 
   const handleChange = (e) => {
     const { value } = e.target;
-    toggleItem(value); // Trigger context function
+    toggleItem(value); 
   };
 
   return (
